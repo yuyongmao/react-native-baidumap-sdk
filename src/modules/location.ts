@@ -15,7 +15,7 @@ type Listener = (
     altitude: number;
     speed: number;
   } & Location
-) => {};
+) => void;
 
 export default {
   init(): Promise<void> {

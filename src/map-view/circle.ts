@@ -3,15 +3,15 @@ import {
   requireNativeComponent,
   ViewPropTypes
 } from "react-native";
-import * as PropTypes from "prop-types";
+import { number } from "prop-types";
 import { LatLngPropType } from "../prop-types";
 
 export default requireNativeComponent("BaiduMapCircle", {
   propTypes: {
     ...ViewPropTypes,
     center: LatLngPropType.isRequired,
-    radius: PropTypes.number,
-    strokeWidth: PropTypes.number,
+    radius: number,
+    strokeWidth: number,
     strokeColor: ColorPropType,
     fillColor: ColorPropType
   }

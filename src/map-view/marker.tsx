@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as PropTypes from "prop-types";
+import { bool, string } from "prop-types";
 import {
   ColorPropType,
   Platform,
@@ -54,11 +54,11 @@ export default class Marker extends Component<Props> {
     ...mapEventsPropType(events),
     coordinate: LatLngPropType.isRequired,
     color: ColorPropType,
-    image: PropTypes.string,
-    title: PropTypes.string,
-    selected: PropTypes.bool,
-    draggable: PropTypes.bool,
-    flat: PropTypes.bool,
+    image: string,
+    title: string,
+    selected: bool,
+    draggable: bool,
+    flat: bool,
     centerOffset: PointPropType
   };
 
@@ -68,7 +68,7 @@ export default class Marker extends Component<Props> {
     }
   }
 
-  nativeComponentName = "BaiduMapMarker";
+  nativeComponent = "BaiduMapMarker";
 
   select() {
     this.call("select");

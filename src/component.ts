@@ -1,7 +1,5 @@
 /**
  * Base component, contains some utils
- *
- * @flow
  */
 import { PureComponent } from "react";
 import { findNodeHandle, UIManager } from "react-native";
@@ -10,7 +8,7 @@ export default class Component<T> extends PureComponent<T> {
   /**
    * Must be defined in subclass if need to call native component method
    */
-  nativeComponentName: string;
+  nativeComponent: string;
 
   /**
    * Call native method
@@ -19,7 +17,7 @@ export default class Component<T> extends PureComponent<T> {
     // @ts-ignore
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this),
-      UIManager[this.nativeComponentName].Commands[command],
+      UIManager[this.nativeComponent].Commands[command],
       params
     );
   }

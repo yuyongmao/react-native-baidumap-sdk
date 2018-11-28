@@ -1,17 +1,17 @@
 import { requireNativeComponent, ViewPropTypes } from "react-native";
-import * as PropTypes from "prop-types";
-
-const Point = PropTypes.shape({
-  latitude: PropTypes.number.isRequired,
-  longitude: PropTypes.number.isRequired,
-  intensity: PropTypes.number
-});
+import { number, shape, arrayOf } from "prop-types";
 
 export default requireNativeComponent("BaiduMapHeatMap", {
   propTypes: {
     ...ViewPropTypes,
-    points: PropTypes.arrayOf(Point).isRequired,
-    radius: PropTypes.number,
-    opacity: PropTypes.number
+    points: arrayOf(
+      shape({
+        latitude: number.isRequired,
+        longitude: number.isRequired,
+        intensity: number
+      })
+    ).isRequired,
+    radius: number,
+    opacity: number
   }
 });

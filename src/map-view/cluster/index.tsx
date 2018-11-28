@@ -20,8 +20,8 @@ type Props = {
   clusterStyle?: ViewStyle;
   clusterTextStyle?: ViewStyle;
   markers: MarkerItem[];
-  renderMarker: (item: MarkerItem) => React.ReactElement<any>;
-  renderCluster?: (params: ClusterParams) => React.ReactElement<any>;
+  renderMarker: (item: MarkerItem) => React.ComponentType<any>;
+  renderCluster?: (params: ClusterParams) => React.ComponentType<any>;
   onPress?: (params: ClusterParams) => void;
 };
 

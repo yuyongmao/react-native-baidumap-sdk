@@ -18,7 +18,7 @@ type Props = { onPress: () => {} } & ViewProps;
 export default class Callout extends Component<Props> {
   static propTypes = ViewPropTypes;
 
-  nativeComponentName = "BaiduMapCallout";
+  nativeComponent = "BaiduMapCallout";
 
   render() {
     const props = {

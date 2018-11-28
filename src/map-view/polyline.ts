@@ -3,15 +3,15 @@ import {
   requireNativeComponent,
   ViewPropTypes
 } from "react-native";
-import * as PropTypes from "prop-types";
+import { number, arrayOf } from "prop-types";
 import { LatLngPropType } from "../prop-types";
 
 export default requireNativeComponent("BaiduMapPolyline", {
   propTypes: {
     ...ViewPropTypes,
-    points: PropTypes.arrayOf(LatLngPropType).isRequired,
-    width: PropTypes.number,
+    points: arrayOf(LatLngPropType).isRequired,
+    width: number,
     color: ColorPropType,
-    colors: PropTypes.arrayOf(ColorPropType)
+    colors: arrayOf(ColorPropType)
   }
 });

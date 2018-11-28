@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as PropTypes from "prop-types";
+import { number, bool, string } from "prop-types";
 import { requireNativeComponent, ViewProps, ViewPropTypes } from "react-native";
 import {
   LatLngPropType,
@@ -68,35 +68,35 @@ export default class MapView extends Component<Props> {
   static propTypes = {
     ...ViewPropTypes,
     ...mapEventsPropType(events),
-    satellite: PropTypes.bool,
-    trafficEnabled: PropTypes.bool,
-    baiduHeatMapEnabled: PropTypes.bool,
-    indoorEnabled: PropTypes.bool,
-    buildingsDisabled: PropTypes.bool,
-    minZoomLevel: PropTypes.number,
-    maxZoomLevel: PropTypes.number,
-    compassDisabled: PropTypes.bool,
-    zoomControlsDisabled: PropTypes.bool,
-    scaleBarDisabled: PropTypes.bool,
-    scrollDisabled: PropTypes.bool,
-    overlookDisabled: PropTypes.bool,
-    rotateDisabled: PropTypes.bool,
-    zoomDisabled: PropTypes.bool,
+    satellite: bool,
+    trafficEnabled: bool,
+    baiduHeatMapEnabled: bool,
+    indoorEnabled: bool,
+    buildingsDisabled: bool,
+    minZoomLevel: number,
+    maxZoomLevel: number,
+    compassDisabled: bool,
+    zoomControlsDisabled: bool,
+    scaleBarDisabled: bool,
+    scrollDisabled: bool,
+    overlookDisabled: bool,
+    rotateDisabled: bool,
+    zoomDisabled: bool,
     center: LatLngPropType,
-    zoomLevel: PropTypes.number,
-    rotation: PropTypes.number,
-    overlook: PropTypes.number,
-    locationEnabled: PropTypes.bool,
+    zoomLevel: number,
+    rotation: number,
+    overlook: number,
+    locationEnabled: bool,
     location: LocationPropType,
-    locationMode: PropTypes.string,
-    paused: PropTypes.bool
+    locationMode: string,
+    paused: bool
   };
 
   setStatus(status: Status, duration: number = 0) {
     this.call("setStatus", [status, duration]);
   }
 
-  nativeComponentName = "BaiduMapView";
+  nativeComponent = "BaiduMapView";
 
   render() {
     const props = {
