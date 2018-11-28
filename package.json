@@ -23,7 +23,7 @@
   ],
   "main": "lib/js",
   "scripts": {
-    "build": "tsc -d --jsx react --outDir lib/js src/index.ts",
+    "build": "tsc --build",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "reload": "adb reverse tcp:8081 tcp:8081 && adb shell input text rr",
     "run-android": "node node_modules/react-native/local-cli/cli.js run-android",

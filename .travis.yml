@@ -33,6 +33,7 @@ jobs:
       node_js: node
       cache: yarn
       script:
+        - yarn build
         - node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --bundle-output bundle.js
         - ls -lh bundle.*
 
