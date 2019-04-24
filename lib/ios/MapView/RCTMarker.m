@@ -24,6 +24,8 @@
 }
 
 - (void)bindCalloutPressHandler {
+    _annotationView.paopaoView.frame = CGRectMake(_annotationView.frame.origin.x, _annotationView.frame.origin.y, 50,  100);
+    _annotationView.paopaoView.bounds = CGRectMake(0, 0, 50, 50);
     [_annotationView.paopaoView addGestureRecognizer:_calloutPressHandler];
 }
 
